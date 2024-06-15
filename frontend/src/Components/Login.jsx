@@ -22,7 +22,7 @@ function Login() {
         
           let res=await axios.post('http://localhost:8081/login',{email,password});
           console.log(res);
-          navigate(`/dash/:${res.data._id}`);
+          navigate(`/dash/${res.data._id}/${res.data.username}`);
          
   
     }

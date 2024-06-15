@@ -4,6 +4,7 @@ const cors=require('cors');
 const dotenv=require('dotenv');
 dotenv.config("");
 const userroute=require('./api/userroute');
+const memoryroute=require('./api/memoryroute');
 const mongoose=require('mongoose');
 
 app.use(express.urlencoded({extended:true}));
@@ -25,6 +26,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use(userroute);
+app.use(memoryroute);
 app.listen(8081,()=>{
     console.log("server connected");
 })
